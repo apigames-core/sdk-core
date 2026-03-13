@@ -236,12 +236,18 @@ export default class ResourceObject implements IResourceObject {
 
     if (isDefined(this.id)) payload.data.id = this.id;
 
-    if (isDefined(this.attributes) && isFalse(isEmpty(this.attributes))) {
-      payload.data.attributes = this.SerializeAttributesPayload(this.shadowAttributes, this.attributes);
+    if (isDefined(this.attributes)) {
+      const serializedAttributes = this.SerializeAttributesPayload(this.shadowAttributes, this.attributes);
+      if (isDefinedAndNotNull(serializedAttributes) && isFalse(isEmpty(serializedAttributes))) {
+        payload.data.attributes = serializedAttributes;
+      }
     }
 
-    if (isDefined(this.relationships) && isFalse(isEmpty(this.relationships))) {
-      payload.data.relationships = this.SerializeRelationshipsPayload(this.shadowRelationships, this.relationships);
+    if (isDefined(this.relationships)) {
+      const serializedRelationships = this.SerializeRelationshipsPayload(this.shadowRelationships, this.relationships);
+      if (isDefinedAndNotNull(serializedRelationships) && isFalse(isEmpty(serializedRelationships))) {
+        payload.data.relationships = serializedRelationships;
+      }
     }
 
     redactUndefinedValues(payload);
@@ -256,12 +262,18 @@ export default class ResourceObject implements IResourceObject {
       },
     };
 
-    if (isDefined(this.attributes) && isFalse(isEmpty(this.attributes))) {
-      payload.data.attributes = this.SerializeAttributesPayload(this.shadowAttributes, this.attributes);
+    if (isDefined(this.attributes)) {
+      const serializedAttributes = this.SerializeAttributesPayload(this.shadowAttributes, this.attributes);
+      if (isDefinedAndNotNull(serializedAttributes) && isFalse(isEmpty(serializedAttributes))) {
+        payload.data.attributes = serializedAttributes;
+      }
     }
 
-    if (isDefined(this.relationships) && isFalse(isEmpty(this.relationships))) {
-      payload.data.relationships = this.SerializeRelationshipsPayload(this.shadowRelationships, this.relationships);
+    if (isDefined(this.relationships)) {
+      const serializedRelationships = this.SerializeRelationshipsPayload(this.shadowRelationships, this.relationships);
+      if (isDefinedAndNotNull(serializedRelationships) && isFalse(isEmpty(serializedRelationships))) {
+        payload.data.relationships = serializedRelationships;
+      }
     }
 
     redactUndefinedValues(payload);
