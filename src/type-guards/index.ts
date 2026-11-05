@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { isArray, isDefinedAndNotNull } from '@apigames/json';
 import { ResourceContainer, ResourceObject } from '../classes';
 import { ResourceObjectRelationship, ResourceObjectRelationships } from '../interfaces';

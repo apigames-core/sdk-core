@@ -1,17 +1,21 @@
 module.exports = {
-  modulePaths: ['<rootDir>/src'],
-  moduleFileExtensions: [
-    'js',
-    'ts',
-  ],
   testEnvironment: 'node',
   testMatch: [
-    '**/tests/build/**/*.test.(j|t)s',
+    '**/tests/build/**/*.test.{js,ts}',
   ],
   testPathIgnorePatterns: [
     '/node_modules/',
   ],
+  coverageDirectory: './coverage/build',
+  collectCoverageFrom: [
+    '<rootDir>/lib/**/*.js',
+  ],
   transform: {
-    '\\.ts$': ['ts-jest'],
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.jest.json',
+      },
+    ],
   },
 };

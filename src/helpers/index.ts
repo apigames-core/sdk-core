@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import {
   hasProperty, isDefined, isNumber, isObject, isUndefinedOrNull,
 } from '@apigames/json';

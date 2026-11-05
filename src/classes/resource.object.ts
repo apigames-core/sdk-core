@@ -1,9 +1,9 @@
+/* eslint-disable import/no-cycle */
 import {
   areEqual, hasProperty, isArray, isDate, isDefined, isDefinedAndNotNull, isEmpty, isFalse, isNumber, isObject,
   isString, isUndefined, isUndefinedOrNull, redactUndefinedValues,
 } from '@apigames/json';
 import { RestClientOptions, RestClientResponseHeaders } from '@apigames/rest-client';
-// eslint-disable-next-line import/no-cycle
 import {
   IResourceContainer, IResourceObject, IResourceObjectAttributes, IResourceObjectRelationships,
   isResourceObjectRelationship, isResourceObjectRelationships, ResourceObjectAttributesLoadType,
@@ -318,6 +318,8 @@ export default class ResourceObject implements IResourceObject {
     const queryOptions: RestClientOptions = {};
 
     let payload: any = this.GetInsertPayload();
+
+    // eslint-disable-next-line max-len
     if (options?.onRewritePostPayload && isDefinedAndNotNull(options.onRewritePostPayload) && options.onRewritePostPayload instanceof Function) {
       payload = options?.onRewritePostPayload(payload);
     }
@@ -358,6 +360,8 @@ export default class ResourceObject implements IResourceObject {
     const queryOptions: RestClientOptions = {};
 
     let payload: any = this.GetUpdatePayload();
+
+    // eslint-disable-next-line max-len
     if (options?.onRewritePatchPayload && isDefinedAndNotNull(options.onRewritePatchPayload) && options.onRewritePatchPayload instanceof Function) {
       payload = options?.onRewritePatchPayload(payload);
     }

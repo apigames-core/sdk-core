@@ -1,4 +1,5 @@
-// eslint-disable-next-line max-classes-per-file
+/* eslint-disable import/no-cycle,max-classes-per-file */
+
 import {
   hasProperty, isArray, isDefined, isObject, isString,
 } from '@apigames/json';

@@ -1,4 +1,5 @@
-import {isDefined, isUndefined} from '@apigames/json';
+/* eslint-disable import/no-cycle */
+import { isUndefined } from '@apigames/json';
 import { ResourceObjectClass } from './resource.object';
 
 export type SDKResourceMap = {

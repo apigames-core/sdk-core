@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { ISDKException } from '..';
 
 export default class SDKException extends Error implements ISDKException {
