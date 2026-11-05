@@ -13,7 +13,7 @@
   ],
   "description": "API Games SDK Core",
   "license": "MIT",
-  "version": "27.1.0",
+  "version": "27.1.1",
   "type": "commonjs",
   "engines": {
     "node": ">=26"
@@ -34,8 +34,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@apigames/json": "^27.1.0",
-    "@apigames/rest-client": "^27.1.0",
+    "@apigames/json": "^27.1.1",
+    "@apigames/rest-client": "^27.1.1",
     "object-hash": "^3.0.0"
   },
   "devDependencies": {
